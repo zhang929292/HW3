@@ -9,10 +9,22 @@ SinglyLinkedList::SinglyLinkedList():head_(nullptr){}
       delete p;
       p = tmp;
     }
+  } 
+  SinglyLinkedList::SinglyLinkedList(const std::vector<int> &inputs, int i){
+	ListNode *node = new ListNode(i);
+	if(i = -1){
+		node->next = nullptr;
+	}
+	ListNode *p = this->GetBackPointer();
+	if(i > inputs.size()){
+		p->next = nullptr;
+	}else
+	p->next = new ListNode(i);
   }
+
+
 bool SinglyLinkedList::empty(){
   return(nullptr == head_);
-
 }
 
 int SinglyLinkedList::size(){
@@ -38,7 +50,6 @@ void SinglyLinkedList::push_front(int i){
   ListNode *node = new ListNode(i);
   node->next = this->head_;
   this->head_ = node;
-
 }
 void SinglyLinkedList::pop_front(){
   if (this->empty()){
@@ -49,6 +60,7 @@ void SinglyLinkedList::pop_front(){
   this->head_ = head_->next;
   delete p;
 }
+
 void SinglyLinkedList::push_back(int i){
   if (this->empty()){
 		head_ = new ListNode(i);
