@@ -63,16 +63,3 @@ TEST(PopBack, ReturnPopBack) {
   	EXPECT_EQ(expected, actual);
 }
 
-TEST(Erase, ReturnErase) {
-	vector<int> input1={1,2,3,5};
-	vector<int> input2={1,3,5};
-	SinglyLinkedList lst1(input1, -1);
-  	SinglyLinkedList lst2(input2, -1);
-
-	ListNode *p = lst1.GetIthPointer(1);
-  	lst1.erase(p);
-	ListNode *m = lst1.GetIthPointer(2);
-	int actual = m -> val;
-  	int expected = lst2.back();
-  	EXPECT_EQ(expected, actual);
-}
