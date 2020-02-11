@@ -50,16 +50,25 @@ TEST(GetIthPointerShould, ReturnGetIthPointer) {
 }
 
 TEST(PopBack, ReturnPopBack) {
-  	SinglyLinkedList lst1;
-	SinglyLinkedList lst2;
-  	lst1.push_front(8);
-	lst1.push_back(12);
-	lst1.push_back(15);
-	lst2.push_front(8);
-	lst2.push_back(12);
+	vector<int> input1={1,3,5,7};
+	vector<int> input2={1,3,5};
+	SinglyLinkedList lst1(input1, 4);
+  	SinglyLinkedList lst2(input2, 3);
   	lst1.pop_back();
   	int actual = lst1.back();
   	int expected = lst2.back();
   	EXPECT_EQ(expected, actual);
 }
 
+TEST(Erase, ReturnErase) {
+	vector<int> input1={1,2,3,5};
+	vector<int> input2={1,3,5};
+	SinglyLinkedList lst1(input1, 4);
+  	SinglyLinkedList lst2(input2, 3);
+	ListNode *p = lst1.GetIthPointer(1);
+  	lst1.erase(p);
+	ListNode *m = lst1.GetIthPointer(2);
+	int actual = m -> val;
+  	int expected = lst2.back();
+  	EXPECT_EQ(expected, actual);
+}
