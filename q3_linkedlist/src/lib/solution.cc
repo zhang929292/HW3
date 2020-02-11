@@ -46,6 +46,7 @@ ListNode* SinglyLinkedList::GetBackPointer(){
   }
   return ret;
 }
+
 void SinglyLinkedList::push_front(int i){
   ListNode *node = new ListNode(i);
   node->next = this->head_;
@@ -108,9 +109,9 @@ int SinglyLinkedList::back(){
 
 void SinglyLinkedList::insert_after(ListNode* p, int i){
 	ListNode* newNode = new ListNode(i);
-  ListNode *tmp = p -> next;
-  p -> next = newNode;
-  newNode -> next = tmp;
+  	ListNode *tmp = p -> next;
+  	p -> next = newNode;
+  	newNode -> next = tmp;
 }
 
 void SinglyLinkedList::erase(ListNode* p){
@@ -139,6 +140,7 @@ void SinglyLinkedList::erase(ListNode* p){
 }
 
 void SinglyLinkedList::print(){
+	
 	if (this->empty()){
 		cout << "Empty list: {}";
 		return;
