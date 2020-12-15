@@ -20,7 +20,7 @@ class SinglyLinkedList {
 public:
   SinglyLinkedList();
   SinglyLinkedList(const std::vector<int> &inputs, int i);
-  ~SinglyLinkedList();
+  ~SinglyLinkedList();		//destructor
 	bool empty();
 	int size();
 	void push_back(int i);
